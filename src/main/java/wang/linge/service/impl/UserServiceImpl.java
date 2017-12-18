@@ -3,6 +3,7 @@ package wang.linge.service.impl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -80,8 +81,6 @@ public class UserServiceImpl implements UserService {
         userVO.setUserTotal(subscribeService.countUserTotal(userId));
         userVO.setFensTotal(subscribeService.countFensTotal(userId));
         userVO.setFollowFlag(subscribeService.checkFollow(currentUserId, userId));
-        userVO.setArticleTotal(informationRepository.countById(userId));
-
         return userVO;
     }
 

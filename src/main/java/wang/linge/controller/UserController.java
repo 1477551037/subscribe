@@ -1,6 +1,7 @@
 package wang.linge.controller;
 
 import jdk.nashorn.internal.objects.annotations.Getter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import wang.linge.config.WechatAuthorizeUrlConfig;
 import wang.linge.dto.UserDTO;
 import wang.linge.enums.ExceptionEnum;
 import wang.linge.exception.SubscribeException;
+import wang.linge.service.InformationService;
 import wang.linge.service.SubscribeService;
 import wang.linge.service.UserService;
 import wang.linge.utils.CookieUtil;
@@ -27,6 +29,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/user")
+@Slf4j
 public class UserController {
 
     @Autowired
@@ -37,6 +40,9 @@ public class UserController {
 
     @Autowired
     private SubscribeService subscribeService;
+
+    @Autowired
+    private InformationService informationService;
 
 
 
@@ -71,7 +77,8 @@ public class UserController {
             userId = CookieUtil.getCookieValue(request,CookieConstant.TOKEN);
         }
         UserVO userVO = service.findUserCenter(CookieUtil.getCookieValue(request, CookieConstant.TOKEN), userId);
-        map.put("userVO",userVO);
+
+        map.put("userVO",informationService.decorateUser(userVO));
         return new ModelAndView("user/center",map);
     }
 

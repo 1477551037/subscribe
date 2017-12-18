@@ -10,7 +10,7 @@ import wang.linge.dataobject.Information;
  */
 public interface InformationRepository extends MongoRepository<Information,String>{
 
-    Integer countById(String userId);
+    Integer countByUserId(String userId);
     Page<Information> findByUserId(String userId, Pageable pageable);
 
 }

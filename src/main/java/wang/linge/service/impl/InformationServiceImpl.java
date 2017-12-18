@@ -23,7 +23,7 @@ public class InformationServiceImpl implements InformationService{
     @Override
     public UserVO decorateUser(UserVO userVO) {
         //设置文章数量
-        userVO.setArticleTotal(repository.countById(userVO.getId()));
+        userVO.setArticleTotal(repository.countByUserId(userVO.getId()));
         //设置展示的文章
         Page<Information> informationPage = repository.findByUserId(userVO.getId(), new PageRequest(0, 5));
         userVO.setArticle(informationPage.getContent());
