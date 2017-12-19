@@ -11,6 +11,8 @@ import wang.linge.convert.User2UserDTOConverter;
 import wang.linge.convert.UserDTO2UserConverter;
 import wang.linge.dataobject.User;
 import wang.linge.dto.UserDTO;
+import wang.linge.enums.ExceptionEnum;
+import wang.linge.exception.SubscribeException;
 import wang.linge.repository.InformationRepository;
 import wang.linge.repository.UserRepository;
 import wang.linge.service.SubscribeService;
@@ -52,7 +54,7 @@ public class UserServiceImpl implements UserService {
     public UserDTO findOneByOpenId(String openId) {
         if (StringUtils.isEmpty(openId)) {
             log.info("【微信授权】openId不能为空! openId={}", openId);
-            //TODO throw new UserException(UserEnum.USER_OPENID_ISEMPTY);
+            throw new SubscribeException(ExceptionEnum.AUTHORIZE_FAIL);
         }
         User user = userRepository.findByOpenId(openId);
         if (user == null) {
@@ -75,7 +77,7 @@ public class UserServiceImpl implements UserService {
         UserVO userVO = new UserVO();
         if (userDTO == null) {
             log.info("【个人中心】用户不存在! openId={}", userId);
-            //TODO throw new UserException(UserEnum.USER_NO_EXIST);
+            throw new SubscribeException(ExceptionEnum.USER_NOT_EXISTENT);
         }
         BeanUtils.copyProperties(userDTO,userVO);
         userVO.setUserTotal(subscribeService.countUserTotal(userId));
@@ -95,7 +97,7 @@ public class UserServiceImpl implements UserService {
         UserDTO userDTO = findOneByOpenId(openId);
         if (userDTO == null) {
             log.info("【个人中心】用户不存在! openId={}", openId);
-            //TODO throw new UserException(UserEnum.USER_NO_EXIST);
+            throw new SubscribeException(ExceptionEnum.USER_NOT_EXISTENT);
         }
 
         return userDTO;

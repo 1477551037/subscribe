@@ -53,7 +53,7 @@
 								<i class="iconfont pet_nav_wd pet_more_list_block_line_ico">&#xe602;</i>
 								<div class="pet_more_list_block_line_font">专栏</div>
 							</a>
-                            <div class="pet_more_list_block_name_title">联系我WeChar：Lhl1477551037</div>
+                            <div class="pet_more_list_block_name_title">联系我WeChat：Lhl1477551037</div>
 						</div>
 					</div>
 

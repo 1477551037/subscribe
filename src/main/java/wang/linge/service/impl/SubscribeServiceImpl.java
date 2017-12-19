@@ -1,12 +1,10 @@
 package wang.linge.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import wang.linge.convert.UserDTO2SubscribeVO;
 import wang.linge.dataobject.Subscribe;
-import wang.linge.dto.MutualSubscribeDTO;
 import wang.linge.dto.UserDTO;
 import wang.linge.enums.ExceptionEnum;
 import wang.linge.enums.FollowFlagEnum;

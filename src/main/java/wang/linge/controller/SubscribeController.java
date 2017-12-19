@@ -77,11 +77,28 @@ public class SubscribeController {
         return mutualSubscribe;
     }
 
-    @GetMapping("/isFriends")
+    @GetMapping("/old_isFriends")
     @ResponseBody
     public Integer isFriends(@RequestParam("fensId") String fensId,
                              HttpServletRequest request){
         String userId = CookieUtil.getCookieValue(request, CookieConstant.TOKEN);
+        Integer mutualFollow = service.checkMutualFollow(userId, fensId);
+        if(mutualFollow == FollowFlagEnum.CONCERN.getCode()){
+            return 1;
+        }
+        return 0;
+    }
+
+    /**
+     * 根据所发的两个用户id判断是否为好友，如果是则返回-1
+     * @param fensId
+     * @param userId
+     * @return
+     */
+    @GetMapping("/isFriends")
+    @ResponseBody
+    public Integer filterIsFriends(@RequestParam("fensId") String fensId,
+                             @RequestParam("userId") String userId){
         Integer mutualFollow = service.checkMutualFollow(userId, fensId);
         if(mutualFollow == FollowFlagEnum.CONCERN.getCode()){
             return 1;

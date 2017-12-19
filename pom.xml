@@ -5,7 +5,7 @@
 
 	<groupId>wang.linge</groupId>
 	<artifactId>subscribe</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>subscribe</name>
