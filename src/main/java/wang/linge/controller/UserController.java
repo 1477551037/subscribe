@@ -46,7 +46,7 @@ public class UserController {
 
 
 
-    @GetMapping("/center")
+    @GetMapping("/old_center")
     public ModelAndView center(@RequestParam(value = "userId",defaultValue = "") String userId,
                                HttpServletRequest request,
                                Map<String,Object> map){
@@ -69,7 +69,7 @@ public class UserController {
         return new ModelAndView("user/member",map);
     }
 
-    @GetMapping("/user_center")
+    @GetMapping("/center")
     public ModelAndView userCenter(@RequestParam(value = "userId",defaultValue = "") String userId,
                                    HttpServletRequest request,
                                    Map<String,Object> map){
