@@ -31,56 +31,12 @@
             <div class="iconfont pet_more_close">×</div>
             <div class="pet_more_list_block">
                 <div class="pet_more_list_block_name">
-                    <div class="pet_more_list_block_name_title">阅读 Read</div>
-                    <a class="pet_more_list_block_line"> <i
+                    <div class="pet_more_list_block_name_title">联系我WeChat：Lhl1477551037</div>
+                    <a class="pet_more_list_block_line" href="http://xinlovezhang.top:8080/ftl/auth"> <i
                             class="iconfont pet_nav_xinxianshi pet_more_list_block_line_ico">&#xe61e;</i>
-                        <div class="pet_more_list_block_line_font">新鲜事</div>
+                        <div class="pet_more_list_block_line_font">首页</div>
                     </a>
-                    <a class="pet_more_list_block_line"> <i
-                            class="iconfont pet_nav_zhangzhishi pet_more_list_block_line_ico">&#xe607;</i>
-                        <div class="pet_more_list_block_line_font">趣闻</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_kantuya pet_more_list_block_line_ico">&#xe62c;</i>
-                        <div class="pet_more_list_block_line_font">阅读</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_mengzhuanti pet_more_list_block_line_ico">&#xe622;</i>
-                        <div class="pet_more_list_block_line_font">专题</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_bk pet_more_list_block_line_ico">&#xe629;</i>
-                        <div class="pet_more_list_block_line_font">订阅</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_wd pet_more_list_block_line_ico">&#xe602;</i>
-                        <div class="pet_more_list_block_line_font">专栏</div>
-                    </a>
-                    <div class="pet_more_list_block_name_title pet_more_list_block_line_height">服务 Service</div>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_xinxianshi pet_more_list_block_line_ico">&#xe61e;</i>
-                        <div class="pet_more_list_block_line_font">新鲜事</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_zhangzhishi pet_more_list_block_line_ico">&#xe607;</i>
-                        <div class="pet_more_list_block_line_font">趣闻</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_kantuya pet_more_list_block_line_ico">&#xe62c;</i>
-                        <div class="pet_more_list_block_line_font">阅读</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_mengzhuanti pet_more_list_block_line_ico">&#xe622;</i>
-                        <div class="pet_more_list_block_line_font">专题</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_bk pet_more_list_block_line_ico">&#xe629;</i>
-                        <div class="pet_more_list_block_line_font">订阅</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_wd pet_more_list_block_line_ico">&#xe602;</i>
-                        <div class="pet_more_list_block_line_font">专栏</div>
-                    </a>
+
                 </div>
             </div>
 
@@ -96,7 +52,7 @@
 
                         <#--index-->
                             <#list subscribeList as subscribeVo>
-                            <li class="am-g am-list-item-desced pet_list_one_block" onclick="javascript:location.href='/subscribe/user/user_center?userId=${subscribeVo.userId}'">
+                            <li class="am-g am-list-item-desced pet_list_one_block" onclick="javascript:location.href='/subscribe/user/center?userId=${subscribeVo.userId}'">
                                 <div class="pet_list_one_info">
                                     <div class="pet_list_one_info_l">
                                         <div class="pet_list_one_info_ico"><img src="${subscribeVo.headImage!"img/a5.png"}" alt=""></div>
