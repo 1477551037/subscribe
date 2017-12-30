@@ -1,16 +1,16 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://47.93.204.25:3306/comment?useUnicode=true&characterEncoding=utf8
-    username: root
-    password: 123456
+    url: jdbc:mysql://*******:****/comment?useUnicode=true&characterEncoding=utf8
+    username: ****
+    password: *****
   jpa:
     hibernate:
       ddl-auto: update
       show-sql: true
   data:
     mongodb:
-      uri: mongodb://user1:123456@120.77.241.246:27017/test
+      uri: *****************************
       connections-per-host: 100
 server:
   context-path: /subscribe
